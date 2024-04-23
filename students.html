@@ -10,27 +10,47 @@
 <body>
 
 
-        <ul class="nav nav-pills mb-3">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
-            </li>
-          </ul>
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">...</div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
-            <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
-          </div>
+    <select class="form-select" multiple aria-label="Multiple select example">
+        <option selected>Student Profile</option>
+        <option value="1">Questions</option>
+        <option value="2">Evaluations</option>
+      </select>
 
-        
+<!--evaluation questions form-->
+    <form>
+<div class="course">
+    <label for="CourseName"> Course Name </label>
+    <div>
+        <input type="text" id="CourseForm">
+</div>
+
+<div class="Lecturer"> 
+    <label for="LecturerName"> Lecturer Name </label>
+    <div>
+        <input type="text" id="LecturerName">
+</div>
+
+</div>
+
+<select class="form-select" multiple aria-label="Multiple select example">
+    <option selected>In a scale of 1 to 5 rate your lecturer</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="1">4</option>
+    <option value="2">5</option>
+  </select>
+
+    </div>
+    
+</form>
+
+
+
+
+
+
+
+
 </body>
 </html>
