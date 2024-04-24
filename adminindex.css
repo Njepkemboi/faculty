@@ -1,0 +1,56 @@
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #110533;
+}
+  
+  .sidebar h2 {
+    color: white;
+    padding-left: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 0;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #956ba8;
+        color:black;
+  }
+  
+  .submenu {
+    display: none;
+  }
+  
+  .sidebar ul li:hover .submenu {
+    display: block;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 250px;
+    background-color: #13041a;
+        color:rgb(248, 244, 244);
+  }
+  
+  .submenu li {
+    padding: 10px 0;
+  }
+  
+  .submenu li a {
+    padding: 10px 20px;
+  }
+  
