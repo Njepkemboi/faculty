@@ -1,3 +1,26 @@
+We're delighted to have you here and hope you find our platform engaging and informative. We invite you to give us your views about our faculty. Appraise them for their good work, highlight what they need to work on in order to ensure there is quality learning.
+Your privacy is key therefore your identity will not be shown to the specific faculty you have evaluated. However it is not anonymous since some feedback you give may need further discussion with the dean. We therefore have your identity known to the dean only.
+Thank you for visiting our Faculty Evaluation Platform
+
+Whether you're a prospective student exploring academic programs, a current student seeking resources and support, a faculty member looking for collaboration opportunities, or simply someone interested in learning more about our institution, we strive to provide you with a seamless and enriching experience.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const questions = [
 {
     question: "Rate your teacher",
@@ -70,3 +93,8 @@ currentQuestion.answers.forEach(answer => {
 
  startQuiz();
  
+	
+
+
+ 
+
