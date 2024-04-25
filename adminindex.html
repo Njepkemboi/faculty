@@ -6,6 +6,43 @@
   <title>Side Menu Bar</title>
   <link rel="stylesheet" href="adminindex.css">
   <style>
+
+    
+      body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+      }
+      
+      .sidebar {
+          height: 100%;
+          width: 200px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          background-color: #110533;
+          padding-top: 20px;
+      }
+      
+      .sidebar a {
+          padding: 10px;
+          text-decoration: none;
+          color: white;
+          display: block;
+          transition: 0.3s;
+      }
+      
+      .sidebar a:hover {
+          background-color: #decde6;
+          color:black;
+      }
+      
+      .content {
+          margin-left: 200px;
+          padding: 20px;
+      }
+  
+  
+
     .footer {
         background-color: #3b043d;
         color: #fff;
@@ -20,21 +57,44 @@
   
 </head>
 <body>
+
+<h1>Admin Panel</h1>
+
   <div class="sidebar">
-    <h2>Admin Panel</h2>
-    <ul>
-      <li><a href="#">Courses</a>
-        <ul class="submenu">
-          <li><a href="#">Course 1</a></li>
-          <li><a href="#">Course 2</a></li>
-          <li><a href="#">Course 3</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Faculty</a></li>
-      <li><a href="#">Students</a></li>
-      <li><a href="#">Reports</a></li>
-    </ul>
+  <a href="#Calender">Academic year</a>
+  <a href="#questions">questions</a>
+  <div class="dropdown">
+    <button class="dropbtn">Schools</button>
+    <div class="dropdown-content">
+      <a href="#Courses">Computing Science</a>
+      <a href="#Courses">International Relations</a>
+      <a href="#Courses">Business</a>
+    </div>
   </div>
+  <a href="#Evaluationreports">Evaluations</a>
+</div>
+
+<div style="margin-left: 220px; padding: 20px;">
+  <h2 id="Calender">Academic calender</h2>
+  <p>This is the content for Acadmic calender part.</p>
+  
+  <h2 id="questions">Questions</h2>
+  <p>This is the content for Section 2.</p>
+  
+  <h2 id="Courses">Submenu 1</h2>
+  <p>This is the content for Submenu 1.</p>
+  
+  <h2 id="Courses">Submenu 2</h2>
+  <p>This is the content for Submenu 2.</p>
+  
+  <h2 id="Courses">Submenu 3</h2>
+  <p>This is the content for Submenu 3.</p>
+  
+  <h2 id="Evaluationreports">Section 4</h2>
+  <p>This is the content for Section 4.</p>
+</div>
+
+
 
   <div class="footer">
     <p>&copy; 2024 Your Website Name. All rights reserved.</p>
