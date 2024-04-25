@@ -76,3 +76,26 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(39, 9, 63;
+  min-width: 200px;
+  z-index: 1;
+}
+
+/* Styles for the links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
