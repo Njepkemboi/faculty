@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="profile.css">
     <title>Profile</title>
+
     <style>
         body {
             margin: 0;
@@ -39,7 +40,6 @@
             padding: 20px;
         }
     </style>
-
 </head>
 <body>
     <div class="sidebar">
@@ -50,76 +50,42 @@
         <a href="evaluation.html"> Evaluation </a>
     </div>
     
-    <div class="profile">
-        <img src="homeground.jpg" alt="Profile Photo">
-        <h1>Naum Jepkemboi</h1>
-        <p>Email: nahum.jepkemboi@riaraunoiversity.ac.ke</p>
-    </div>
-
-    <div class="container">
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
-            
-            .container {
-                max-width: 400px;
-                margin: 50px auto;
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                background-color: #f9f9f9;
-            }
-            
-            .container h2 {
-                text-align: center;
-            }
-            
-            .form-group {
-                margin-bottom: 20px;
-            }
-            
-            .form-group label {
-                display: block;
-                margin-bottom: 5px;
-            }
-            
-            .form-group input {
-                width: 100%;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-            }
-            
-            .btn {
-                width: 100%;
-                padding: 10px;
-                background-color: #333;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-            
-            .btn:hover {
-                background-color: #555;
-            }
-        </style>
-
+    <<div class="profile">
+        <img src="homeground.jpg" alt="Profile Photo" id="profile-photo">
+        <p><strong>Name:</strong> <span id="name">Jepkemboi naomi</span> <input type="text" id="edit-name" class="edit-input" placeholder="Enter new name"></p>
+        <p><strong>Email:</strong> <span id="email">nahumlagat@gmail.com</span> <input type="email" id="edit-email" class="edit-input" placeholder="Enter new email"></p>
+        <p><strong>Admission Number:</strong> <span id="admission-number">23ZAD1080</span> <input type="text" id="edit-admission" class="edit-input" placeholder="Enter new admission number"></p>
+        <p><strong>Course:</strong> <span id="course">Computer Science</span> <input type="text" id="edit-course" class="edit-input" placeholder="Enter new course"></p>
+        <button onclick="toggleEdit()">Edit Profile</button>
+        <button onclick="saveChanges()">Save Changes</button>
+      </div>
+      
+      <script>
+      function toggleEdit() {
+        var inputs = document.querySelectorAll('.edit-input');
+        var buttons = document.querySelectorAll('button');
+        inputs.forEach(input => {
+          input.style.display = input.style.display === 'none' ? 'inline-block' : 'none';
+        });
+        buttons.forEach(button => {
+          button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
+        });
+      }
+      
+      function saveChanges() {
+        var name = document.getElementById('edit-name').value;
+        var email = document.getElementById('edit-email').value;
+        var admission = document.getElementById('edit-admission').value;
+        var course = document.getElementById('edit-course').value;
         
-        <h2>Edit Profile</h2>
-        <form id="profileForm" action="update_profile.php" method="post">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
-            </div>
-            <button type="submit" class="btn">Update Profile</button>
-        </form>
-    </div>
+        document.getElementById('name').textContent = name;
+        document.getElementById('email').textContent = email;
+        document.getElementById('admission-number').textContent = admission;
+        document.getElementById('course').textContent = course;
+        
+        toggleEdit();
+      }
+      </scrip>
 
    
 </body>
