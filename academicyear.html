@@ -4,37 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Year Semester Status Form</title>
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        form {
+            background-color: #fff; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 13px rgba(0, 0, 0, 0.1); 
+            width: 50%; 
+            max-width: 500px;
+        }
+
+        h2 {
+            color: navy; 
+            text-align: center; 
+            margin-top: 0;
+        }
+
+        label {
+            font-weight: bold;
+            color: navy;
+        }
+
+        select, input[type="submit"] {
+            padding: 8px;
+            border: 1px solid navy;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%; 
+            margin-bottom: 10px;
+        }
+
+
+        input[type="submit"] {
+            background-color: navy;
+            color: #fff; 
+            cursor: pointer;
+        }
+
+    
+        input[type="submit"]:hover {
+            background-color: #001f3f; 
+        }
+    </style>
+    
 </head>
 <body>
-    <div class="sidebar">
-        <a href="#academicyear.html">Academic year</a>
-    </div>
 
 
     <h2>Year Semester Status Form</h2>
     <form action="#" method="post">
         <label for="year">Year:</label>
         <select id="year" name="year">
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-            <!-- Add more years as needed -->
+            <option value="2022">2022-2023</option>
+            <option value="2023">2023-2024</option>
+            <option value="2024">2024-2025</option>
+            
         </select>
         <br><br>
-        <label for="semester">Semester:</label>
+        <label for="semester">Trisemester:</label>
         <select id="semester" name="semester">
-            <option value="Spring">Spring</option>
-            <option value="Summer">Summer</option>
-            <option value="Fall">Fall</option>
-            <option value="Winter">Winter</option>
-            <!-- Add more semester options as needed -->
+            <option value="Spring">1</option>
+            <option value="Summer">2</option>
+            
+            
         </select>
         <br><br>
         <label for="status">Status:</label>
         <select id="status" name="status">
             <option value="Starting">Starting</option>
             <option value="Ended">Ended</option>
-            <!-- Add more status options as needed -->
+            
         </select>
         <br><br>
         <input type="submit" value="Submit">

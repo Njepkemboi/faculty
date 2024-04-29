@@ -81,7 +81,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgb(39, 9, 63;
+  background-color: rgb(39, 9, 63);
   min-width: 200px;
   z-index: 1;
 }
