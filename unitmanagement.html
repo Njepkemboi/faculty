@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        form {
+            background-color: #fff; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 13px rgba(0, 0, 0, 0.1); 
+            width: 50%; 
+            max-width: 500px;
+        }
+
+        h2 {
+            color: navy; 
+            text-align: center; 
+            margin-top: 0;
+        }
+
+        label {
+            font-weight: bold;
+            color: navy;
+        }
+
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-color: #080f52;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+
+        input[type="submit"] {
+            background-color: navy;
+            color: #fff;
+            cursor: pointer;
+            width: auto; 
+            float: right; 
+        }
+
+        input[type="submit"]:hover {
+            background-color: #080f52;
+        }
+
+        .btn-group {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-group button {
+            padding: 8px 12px;
+            margin-right: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-edit{
+            background-color: navy;
+            color: #fff;
+        }
+
+        .btn-delete {
+            background-color: #8a1010;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Unit Information Form</h2>
+    <form action="#" method="post">
+        <label for="unitCode">Unit Code:</label>
+        <input type="text" id="unitCode" name="unitCode" placeholder="Enter unit code" required>
+
+        <label for="unitName">Unit Name:</label>
+        <input type="text" id="unitName" name="unitName" placeholder="Enter unit name" required>
+
+        <label for="facultyName">Faculty Name:</label>
+        <input type="text" id="facultyName" name="facultyName" placeholder="Enter faculty name" required>
+
+        <input type="submit" value="Save Changes">
+        
+        <div class="btn-group">
+            <button type="button" class="btn-edit">Edit</button>
+            <button type="button" class="btn-delete">Delete</button>
+        </div>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".btn-edit").addEventListener("click", function() {
+                // Handle edit button click event
+                alert("Edit mode activated!");
+                // Enable input fields for editing
+                document.getElementById("unitCode").disabled = false;
+                document.getElementById("unitName").disabled = false;
+                document.getElementById("facultyName").disabled = false;
+            });
+
+            document.querySelector(".btn-delete").addEventListener("click", function() {
+                // Handle delete button click event
+                alert("Are you sure you want to delete?");
+                // Perform delete action here...
+            });
+        });
+    </script>
+</body>
+</html>
