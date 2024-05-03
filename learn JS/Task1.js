@@ -1,3 +1,5 @@
+//  LEARNING JAVASSCRIPT
+
 console.log ("Hello from JavaScript")
 var myName = "Naum"
 /* DECLARING VARIABLES
@@ -8,7 +10,7 @@ Cont-> is used with variables that do not change */
  
  var myName = "Naum"
 
- let ourNme = RiaraUniversity
+ let ourName = RiaraUniversity
 
  const pi = 3.142
 
@@ -156,3 +158,94 @@ var anAdjective = "Wonderful!";
 var myStr = "My name is ";
 myStr += anAdjective;
 // console log will output my name is Wonderful!
+
+// LENGTH OF A STRING
+var firstNameLength = 0;
+var firstName = "Lagat";
+firstNameLength = firstName.length;
+//    .length will return an integer showing the number of charactes in the string 
+//  eg: 5
+
+// BRACKET NOTATION TO FIND FIRST CHARACTER IN STRING
+//JavaScript uses zero-based indexing-> start counting from 0
+// It is a way to get a character at a specific index within a string.
+ var firstLetterOfFirstName = ""
+ var firstName = "Naum"
+ var firstLetterOfFirstName = firstName [0];
+ console.log(0)
+// console outupts N
+
+// N=0, a=1, u=2, m=3 
+
+
+// STRING IMUTABILITY
+// IMUTABILE -> They cannot be altered once created
+var myStr = "Jello world";
+
+myStr [0] = {H};
+//We cannot change individual characters.
+myStr = "Hello world";
+
+
+//BRACKET NOTATION TO FIND nth CHARACTER IN A STRING
+var firstLetterOfFirstName = ""
+ var firstName = "Naum"
+ var firstLetterOfFirstName = firstName [0];
+
+ // To find the 3rd leter replace 0 with 2
+ var thirdLetterOfFirstName = firstName [2];
+
+
+//BRACKET NOTATION TO FIND LAST CHARACTER IN A STRING
+ var firstName = "Naum"
+ var firstLetterOfFirstName = firstName [firstName.length - 1];
+/* .length-1 will show the last index
+we subract 1 since its indexing starts with o
+*/
+
+// FINDING nth TO LAST LETER IN A STRING
+var firstName = "Naum"
+ var secondToLastLetterOfFirstName = firstName [firstName.length - 2]
+
+
+ // MULTIPLE VALUES ARRAYS
+ var ourArray =["Naum" , 21];
+
+
+ //NESTED ARRAY
+ var ourArray =[["Naum" , 21], ["Deborah", 9]];
+
+ // ACCESS ARRAYS WITH INDEXES
+ var ourArray = [10,20,30];
+var ourData = [0]; // it is index 1,, is equals to 10
+ console.log(myData)
+// console outputs 10
+
+// MODIFY ARRAY DATA WITH INDEXES
+var ourArray = [15,20,2];
+ourArray[1] = 10; // The new array will be  [10,15,20,25]
+
+//MANIPULATE ARRAY USING PUSH()
+var ourArray = ["Naum", "j", "Lagat"];
+ourArray.push (["is", "happy"]);
+// our array is now ["Naum", "j", "Lagat", ["is", "happy"]]
+
+
+//MANIPULATE ARRAYS WITH POP
+var ourArray = [1,2,3,4];
+var removedFromOurArray = ourArray.pop();
+// 4 is removed from the array and the new aray is [1,2,3]
+
+
+//MANIPULATE ARRAYS USING SHIFT()
+// Removes the first element in an array
+var ourArray = [1,2,3,4];
+var removedFromOurArray = ourArray.shift();
+// 1 is removed from the array and the new aray is [2,3,4]
+
+
+//MANIPULATE ARRAYS USING UNSHIFT()
+//adds an element to the begining of the array
+var ourArray = ["Naum", "j", "Lagat"];
+ourArray.shift(); // new array becomes ["j", "Lagat"]
+ourArray.unshift("Memo"); // new array becomes ["Memo"j", "Lagat"
