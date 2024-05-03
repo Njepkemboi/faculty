@@ -82,3 +82,77 @@ myVar = myVar + 1;
 //or
 myVar ++; 
 //inrements 80 to 81 
+
+// decrementing
+var myvar = 10;
+myVar --;
+
+// DECIMAL NUMBERS
+var myDecimal = 4.5;
+
+
+// MULTIPLY DECIMALS
+//Similar to integer multiplication.
+
+// REMAINDER
+var remainder = 10 % 3;
+
+
+//DECLARE STRING VARIABLES
+
+var firstName = "Naum";
+var lastName = "Jepkemboi";
+
+// ESCAPING LITERAL QUOTES IN STRINGS
+// quotes within the string
+var myStr = "I like playing \"football\" soccer";
+cosole.log(myStr)
+// the console with show the string without the slash and without igoning the quotations inside the main quotation.
+
+// QUOTING STRINGS WITH SINGLE QUOTES
+// Use single quotes as the main quotation to escape the slash
+var myStr = 'I like playing \"football\" soccer';
+
+
+//ESCAPING SEQUENCES IN STRINGS
+
+/*
+ CODE   OUTPUT
+ \'      single quote
+\"       double quote
+\\       backslash
+\n       newline
+\r       carriage return
+\t       tab
+\b       backspace
+\f       form feed 
+*/
+
+
+//example
+var myStr = "FirstLine\n \t\\SecondLine\nThirdLine"
+
+// CONCATENATING STRINGS WITH PLUS OPERATOR
+// joining character strings end-to-end.
+
+var myStr = "My name is Naum." + "I am a student."; 
+console.log(myStr)
+// My name is Naum. I am a student.
+
+//use of += to concatenate
+var ourStr = "My name is Naum. ";
+ourStr +="I am a student."
+
+
+//CONCATENATE STRINGS WITH VARIABLES
+var myName = "NaumLagat";
+var ourStr = "Hello, my name is " + myName + ", how are you doing? ";
+console.log(myStr)
+// console log outputs: Hello, my name is NaumLagat how are you doing?
+
+
+//APPENDING VARIABLES TO STRINGS
+var anAdjective = "Wonderful!";
+var myStr = "My name is ";
+myStr += anAdjective;
+// console log will output my name is Wonderful!
