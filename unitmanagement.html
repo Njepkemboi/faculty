@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Table</title>
+    <style>
+        .body{
+            align-content: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 0 auto; /* Center-align the table */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .add-btn {
+            background-color: #19125e;
+            color: white;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        #add-course-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #0c0333;
+            z-index: 1000;
+        }
+        #popup-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #0f0741;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <table id="course-table">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Course 1</td>
+                <td><button class="btn delete-btn" onclick="deleteCourse(0)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Course 2</td>
+                <td><button class="btn delete-btn" onclick="deleteCourse(1)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Course 3</td>
+                <td><button class="btn delete-btn" onclick="deleteCourse(2)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Course 4</td>
+                <td><button class="btn delete-btn" onclick="deleteCourse(3)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Course 5</td>
+                <td><button class="btn delete-btn" onclick="deleteCourse(4)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn add-btn" onclick="showPopup()">Add Course</button>
+
+    <div id="add-course-popup">
+        <input type="text" id="new-course-name" placeholder="Enter course name">
+        <button class="btn add-btn" onclick="addCourse()">Add</button>
+        <button class="btn" onclick="hidePopup()">Cancel</button>
+    </div>
+
+    <div id="popup-message"></div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('add-course-popup').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('add-course-popup').style.display = 'none';
+        }
+
+        function addCourse() {
+            var courseName = document.getElementById('new-course-name').value;
+            if (courseName.trim() !== '') {
+                var table = document.getElementById('course-table').getElementsByTagName('tbody')[0];
+                var newRow = table.insertRow(table.rows.length);
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+                cell1.innerHTML = courseName;
+                cell2.innerHTML = '<button class="btn delete-btn" onclick="deleteCourse(' + (table.rows.length - 1) + ')">Delete</button>';
+                hidePopup();
+                showSuccessMessage("Course '" + courseName + "' added successfully!");
+            } else {
+                alert('Please enter course name.');
+            }
+        }
+
+        function deleteCourse(index) {
+            var table = document.getElementById('course-table').getElementsByTagName('tbody')[0];
+            table.deleteRow(index);
+        }
+
+        function showSuccessMessage(message) {
+            var popupMessage = document.getElementById('popup-message');
+            popupMessage.innerText = message;
+            popupMessage.style.display = 'block';
+            setTimeout(function() {
+                popupMessage.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

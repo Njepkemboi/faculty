@@ -248,4 +248,24 @@ var removedFromOurArray = ourArray.shift();
 //adds an element to the begining of the array
 var ourArray = ["Naum", "j", "Lagat"];
 ourArray.shift(); // new array becomes ["j", "Lagat"]
-ourArray.unshift("Memo"); // new array becomes ["Memo"j", "Lagat"
+ourArray.unshift("Memo"); // new array becomes ["Memo", "j", "Lagat"
+
+
+//CREATING REUSABLE CODE
+function ourReusableFunction() {
+  console.log ("Hello, World");
+}
+
+//when you write the function (ourReusableFunction), hello world is displayed in the console.
+
+
+
+//PASSING VALUES TO FUNCTIONS WITH ARGUMENTS
+
+// PARAMETERS -> Variables that act as placeholders for values to be input to a function when it is called.
+
+function ourFunctionWithArgs(a, b) {
+  console.log(a+b);
+}
+ourFunctionWithArgs(10,6);  // output = 4
+
