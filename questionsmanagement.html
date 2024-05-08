@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: navy;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn-submit {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="form">
+            <div class="question" id="question1">
+                <p>Question 1: What is your favorite color?</p>
+                <input type="radio" name="question1" value="Red"> Red<br>
+                <input type="radio" name="question1" value="Blue"> Blue<br>
+                <input type="radio" name="question1" value="Green"> Green<br>
+            </div>
+            <div class="question" id="question2" style="display: none;">
+                <p>Question 2: What is your age?</p>
+                <input type="text" name="question2">
+            </div>
+            <!-- Repeat this pattern for the remaining questions -->
+            
+            <button type="button" class="btn" id="prevBtn" onclick="prevQuestion()" style="display: none;">Previous</button>
+            <button type="button" class="btn" id="nextBtn" onclick="nextQuestion()">Next</button>
+            <button type="submit" class="btn btn-submit" id="submitBtn" style="display: none;">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        var currentQuestion = 1;
+        var totalQuestions = 3; // Total number of questions
+        
+        function nextQuestion() {
+            var currentDiv = document.getElementById('question' + currentQuestion);
+            currentDiv.style.display = 'none';
+            currentQuestion++;
+            var nextDiv = document.getElementById('question' + currentQuestion);
+            nextDiv.style.display = 'block';
+            
+            if (currentQuestion > 1) {
+                document.getElementById('prevBtn').style.display = 'inline-block';
+            }
+            if (currentQuestion === totalQuestions) {
+                document.getElementById('nextBtn').style.display = 'none';
+                document.getElementById('submitBtn').style.display = 'inline-block';
+            }
+        }
+        
+        function prevQuestion() {
+            var currentDiv = document.getElementById('question' + currentQuestion);
+            currentDiv.style.display = 'none';
+            currentQuestion--;
+            var prevDiv = document.getElementById('question' + currentQuestion);
+            prevDiv.style.display = 'block';
+            
+            if (currentQuestion === 1) {
+                document.getElementById('prevBtn').style.display = 'none';
+            }
+            if (currentQuestion < totalQuestions) {
+                document.getElementById('nextBtn').style.display = 'inline-block';
+                document.getElementById('submitBtn').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

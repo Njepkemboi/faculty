@@ -108,9 +108,13 @@
             var password = document.getElementById("password").value;
             var confirmPassword = document.getElementById("confirm_password").value;
             var passwordError = document.getElementById("password_error");
+            var email = document.getElementById("email").value;
 
             if (password !== confirmPassword) {
                 passwordError.innerText = "Passwords do not match!";
+                return false;
+            } else if (!email.endsWith('@riarauniversity.ac.ke')) {
+                passwordError.innerText = "Email must end with @riarauniversity.ac.ke";
                 return false;
             } else {
                 passwordError.innerText = "";
