@@ -353,10 +353,18 @@ body {
             }
         }
 
+        
         function deleteLecturer(button) {
+
             var row = button.parentNode.parentNode;
-            row.parentNode.removeChild(row);
+            
+            var confirmation = confirm("Are you sure you want to delete this criteria?");
+            
+            if (confirmation) {
+                row.parentNode.removeChild(row);
+            }
         }
+        
     </script>
 </body>
 </html>
