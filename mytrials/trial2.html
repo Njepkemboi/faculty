@@ -3,83 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Linking to Content</title>
+    <title>Dashboard</title>
     <style>
-        /* Some basic styling for the menu */
-        .menu {
-            list-style-type: none;
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            background-color: #f1f1f1;
         }
 
-        .menu li {
-            float: left;
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
         }
 
-        .menu li a {
+        .card {
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card p {
+            margin-bottom: 0;
+        }
+
+        .report-container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            display: none;
+        }
+
+        .report-container.open {
             display: block;
-            color: #333;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
         }
 
-        .menu li a:hover {
-            background-color: #ddd;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .toggle-button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            cursor: pointer;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h2>Menu Linking to Content</h2>
-    <ul class="menu">
-        <li><a href="#section1">Section 1</a></li>
-        <li><a href="#section2">Section 2</a></li>
-        <li><a href="#section3">Section 3</a></li>
-    </ul>
 
-    <div id="section1" style="padding: 20px; background-color: #f9f9f9;">
-        <h3>Section 1</h3>
-        <h2>Year Semester Status Form</h2>
-    <form action="#" method="post">
-        <label for="year">Year:</label>
-        <select id="year" name="year">
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-            <!-- Add more years as needed -->
-        </select>
-        <br><br>
-        <label for="semester">Semester:</label>
-        <select id="semester" name="semester">
-            <option value="Spring">Spring</option>
-            <option value="Summer">Summer</option>
-            <option value="Fall">Fall</option>
-            <option value="Winter">Winter</option>
-            <!-- Add more semester options as needed -->
-        </select>
-        <br><br>
-        <label for="status">Status:</label>
-        <select id="status" name="status">
-            <option value="Starting">Starting</option>
-            <option value="Ended">Ended</option>
-            <!-- Add more status options as needed -->
-        </select>
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
-    
+<div class="dashboard">
+    <div class="card">
+        <h3>Total Number of Students</h3>
+        <p>500</p>
     </div>
+    <div class="card">
+        <h3>Total Users</h3>
+        <p>100</p>
+    </div>
+</div>
 
-    <div id="section2" style="padding: 20px; background-color: #f0f0f0;">
-        <h3>Section 2</h3>
-        <p>This is the content of Section 2.</p>
-    </div>
+<div class="report-container" id="report-container">
+    <h3>Evaluation Report</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Option A</th>
+                <th>Option B</th>
+                <th>Option C</th>
+                <th>Option D</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Question 1</td>
+                <td>25%</td>
+                <td>35%</td>
+                <td>20%</td>
+                <td>20%</td>
+            </tr>
+            <tr>
+                <td>Question 2</td>
+                <td>30%</td>
+                <td>25%</td>
+                <td>25%</td>
+                <td>20%</td>
+            </tr>
+            <tr>
+                <td>Question 3</td>
+                <td>40%</td>
+                <td>20%</td>
+                <td>25%</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>Text Entry Question 1</td>
+                <td colspan="4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+            </tr>
+            <tr>
+                <td>Text Entry Question 2</td>
+                <td colspan="4">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-    <div id="section3" style="padding: 20px; background-color: #e9e9e9;">
-        <h3>Section 3</h3>
-        <p>This is the content of Section 3.</p>
-    </div>
+<div class="toggle-button" onclick="toggleReport()">Toggle Evaluation Report</div>
+
+<script>
+    function toggleReport() {
+        var reportContainer = document.getElementById('report-container');
+        reportContainer.classList.toggle('open');
+    }
+</script>
+
 </body>
 </html>
