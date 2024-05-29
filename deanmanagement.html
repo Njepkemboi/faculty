@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dean Management</title>
+    <title>Faculty Management</title>
     <style>
 
         
@@ -236,7 +236,7 @@ body {
           <a href="#Courses">Business</a>
         </div>
       </div>
-      <a href="deanmanagement.html">Dean management</a>
+      <a href="#dean">Dean management</a>
       <a href="facultymanagement.html">Faculty management</a>
       <a href="studentmanagement.html">Student management</a>
       <a href="#reports">Evaluation reports</a>
@@ -244,19 +244,18 @@ body {
     </div>
 
     <div class="container">
-        <h2>Dean Management</h2>
+        <h2>Lecturers Management</h2>
         <button class="add-button" onclick="showAddForm()">Add Lecturer</button>
         <table id="lecturersTable">
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>School</th>
                     <th>Email Address</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Lecturers data will be populated here -->
+                <!-- Lecturers data will be dynamically populated here -->
             </tbody>
         </table>
     </div>
@@ -265,10 +264,9 @@ body {
     <!-- Popup form for adding a new lecturer -->
     
     <div class="add-form" id="addForm">
-        <h2>Add Dean</h2>
+        <h2>Add Lecturer</h2>
         <form id="lecturerForm" onsubmit="return saveLecturer()">
             <input type="text" id="name" placeholder="Name" required><br>
-            <input type="text" id="school" placeholder="School" required><br>
             <input type="email" id="email" placeholder="Email Address" required><br>
             <input type="password" id="password" placeholder="Password" required><br>
             <input type="password" id="confirm_password" placeholder="Confirm Password" required><br>
@@ -288,7 +286,6 @@ body {
 
         function saveLecturer() {
             var name = document.getElementById("name").value;
-            var school = document.getElementById("school").value;
             var email = document.getElementById("email").value;
             var password = document.getElementById("password").value;
             var confirmPassword = document.getElementById("confirm_password").value;
@@ -301,7 +298,7 @@ body {
             var table = document.getElementById("lecturersTable").getElementsByTagName('tbody')[0];
             var rows = table.rows;
             for (var i = 0; i < rows.length; i++) {
-                if (rows[i].cells[2].innerText === email) {
+                if (rows[i].cells[1].innerText === email) {
                     var confirmUpdate = confirm("A lecturer with the same email already exists. Do you want to update the existing entry?");
                     if (!confirmUpdate) {
                         return false;
@@ -322,14 +319,11 @@ body {
             var cell1 = newRow.insertCell(0);
             var cell2 = newRow.insertCell(1);
             var cell3 = newRow.insertCell(2);
-            
             cell1.innerHTML = name;
-            cell2.innerHTML = school;
-            cell3.innerHTML = email;
-
-            cell4.innerHTML = '<button onclick="viewLecturer(this)">View</button> ' +
-                             '<button onclick="editLecturer(this)">Edit</button> ' ;
-                             
+            cell2.innerHTML = email;
+            cell3.innerHTML = '<button onclick="viewLecturer(this)">View</button> ' +
+                             '<button onclick="editLecturer(this)">Edit</button> ' +
+                             '<button onclick="deleteLecturer(this)">Delete</button>';
             document.getElementById("successMessage").innerText = "Lecturer added successfully.";
             document.getElementById("successMessage").style.display = "block";
             setTimeout(function() {
@@ -343,24 +337,20 @@ body {
         function viewLecturer(button) {
             var row = button.parentNode.parentNode;
             var name = row.cells[0].innerText;
-            var school = row.cells[1].innerText;
-            var email = row.cells[2].innerText;
-            alert("Name: " + name + "School: " + school + "\nEmail: " + email);
+            var email = row.cells[1].innerText;
+            alert("Name: " + name + "\nEmail: " + email);
         }
 
         function editLecturer(button) {
             var row = button.parentNode.parentNode;
             var nameCell = row.cells[0];
-            var schoolCell = row.cells[1];
-            var emailCell = row.cells[2];
+            var emailCell = row.cells[1];
 
             var newName = prompt("Enter new name", nameCell.innerText);
-            var newSchool = prompt("Enter new school", nameCell.innerText);
             var newEmail = prompt("Enter new email", emailCell.innerText);
 
             if (newName !== null && newEmail !== null) {
                 nameCell.innerText = newName;
-                nameCell.innerText = newSchool;
                 emailCell.innerText = newEmail;
             }
         }
